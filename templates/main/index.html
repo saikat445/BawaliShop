@@ -1,0 +1,146 @@
+{% extends 'Main/base.html'%}
+{% block content %}
+{%load static%}
+        <div class="section ">
+            <div class="hero-slider swiper-container slider-nav-style-1 slider-dot-style-1">
+                <!-- Hero slider Active -->
+                <div class="swiper-wrapper">
+                    <!-- Single slider item -->
+                    <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" data-bg-image="assets/images/hero/bg/hero-bg-2-1.webp">
+                        <div class="container h-100">
+                            <div class="row h-100 flex-row-reverse">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                                    <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                        <h2 class="title-1">Easy Your Life <br>
+                                        For Smart Device </h2>
+                                        <span class="price">
+                                            <span class="mini-title">Only</span>
+                                        <span class="amount">$24.00</span>
+                                        </span>
+                                        <a href="shop-left-sidebar.html" class="btn btn-primary text-capitalize">Shop All Devices</a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                                    <div class="show-case">
+                                        <div class="hero-slide-image slider-2">
+                                            <img src="{% static 'assets/images/hero/inner-img/hero-2-1.png' %}" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Single slider item -->
+                    <div class="hero-slide-item slider-height-2 swiper-slide bg-color1" data-bg-image="assets/images/hero/bg/hero-bg-2-1.webp">
+                        <div class="container h-100">
+                            <div class="row h-100 flex-row-reverse">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 align-self-center sm-center-view">
+                                    <div class="hero-slide-content hero-slide-content-2 slider-animated-1">
+                                        <h2 class="title-1">Easy Your Life <br>
+                                        For Smart Device </h2>
+                                        <span class="price">
+                                            <span class="mini-title">Only</span>
+                                        <span class="amount">$24.00</span>
+                                        </span>
+                                        <a href="shop-left-sidebar.html" class="btn btn-primary text-capitalize">Shop All Devices</a>
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-6 d-flex justify-content-center position-relative align-items-center">
+                                    <div class="show-case">
+                                        <div class="hero-slide-image slider-2">
+                                            <img src="{% static 'assets/images/hero/inner-img/hero-2-1.png' %}" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Add Pagination -->
+                <div class="swiper-pagination swiper-pagination-white"></div>
+                <!-- Add Arrows -->
+                <div class="swiper-buttons">
+                    <div class="swiper-button-next"></div>
+                    <div class="swiper-button-prev"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero/Intro Slider End -->
+        <!-- Banner Area Start -->
+
+        <!-- Banner Area End -->
+       <!-- Product Area Start -->
+        <div class="product-area pb-100px">
+            <div class="container">
+                <!-- Section Title & Tab Start -->
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-title text-center">
+                            <h2 class="title">Best Product That Suits YOU</h2>
+                        </div>
+                    </div>
+                </div>
+                <!-- Section Title & Tab End -->
+                <div class="row">
+                    <div class="col">
+                        <div class="row mb-n-30px">
+                            {% for prod in product %}
+                            <div class="col-lg-4 col-xl-3 col-md-6 col-sm-6 col-xs-6 mb-30px">
+                                <!-- Single Prodect -->
+                                <div class="product">
+                                    <span class="badges">
+                                        <span class="new">{{prod.condition}}</span>
+                                    </span>
+                                    <div class="thumb">
+                                        <a href="/products/{{prod.id}}" class="image">
+                                            <img src="{{prod.image}}" alt="Product" width="80" height="250 />
+                                            <img class="hover-image" src="{{prod.image}}" alt="Product" />
+                                        </a>
+                                    </div>
+                                    <div class="content">
+                                        <span class="category"><a href="#">{{prod.categories}}</a></span>
+                                        <h5 class="title"><a href="/products/{{prod.id}}">{{prod.name}}
+                                            </a>
+                                        </h5>
+                                        <span class="price">
+                                            <span class="new">Rs. {{prod.price}}</span>
+                                        </span>
+                                    </div>
+                                    <div class="actions">
+                                                <button title="Add To Cart" class="action add-to-cart" data-bs-toggle="modal" data-bs-target="#exampleModal-Cart-{{forloop.counter}}"><i
+                                                    class="pe-7s-shopbag"></i></button>
+                                                <button class="action wishlist" title="Wishlist" data-bs-toggle="modal" data-bs-target="#exampleModal-Wishlist"><i
+                                                        class="pe-7s-like"></i></button>
+                                                <button class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal-{{forloop.counter}}"><i class="pe-7s-look"></i></button>
+                                                <button class="action compare" title="Compare" data-bs-toggle="modal" data-bs-target="#exampleModal-Compare"><i
+                                                        class="pe-7s-refresh-2"></i></button>
+                                            </div>
+                                </div>
+                            </div>
+                            {%  endfor %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Product Area End -->
+        <!-- Banner Area Start -->
+
+        <!-- Banner Area End -->
+        <!-- Feature product area start -->
+
+        <!-- Feature product area End -->
+        <!-- Fashion Area Start -->
+
+        <!-- Fashion Area End -->
+        <!-- Feature Area Srart -->
+
+        <!-- Feature Area End -->
+        <!-- Blog area start from here -->
+
+                <!-- section title start -->
+
+                <!-- section title start -->
+
+        <!-- Blog area end here -->
+{%endblock%}
